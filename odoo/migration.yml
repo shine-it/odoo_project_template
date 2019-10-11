@@ -1,0 +1,18 @@
+migration:
+  options:
+    install_command: odoo --without-demo=${WITHOUT_DEMO:-True}
+  versions:
+    - version: setup
+      operations:
+        pre:
+          - "sh -c 'psql -c \"CREATE EXTENSION pg_trgm;\"'"
+        post:
+          - echo 'added in the setup post stage'
+      addons:
+        upgrade:
+          - web_environment_ribbon
+          - sale_management
+          - sale_purchase
+          - sale_mrp
+          - sale_stock
+          - sale_expense

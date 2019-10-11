@@ -1,0 +1,6 @@
+#!/bin/bash
+
+HOST_BACKUPS=/Users/tony/odoo_extra/odoo_deploy_test/backup
+PROJECT_NAME=tony_odoo-deploy-test
+
+docker run --rm --net=${PROJECT_NAME}_default -e PGPASSWORD=odoo -v $HOST_BACKUPS:/backup postgres:9.6 pg_dump -Uodoo --file /backup/db.pg --format=c db -h db

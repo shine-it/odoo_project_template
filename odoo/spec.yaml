@@ -1,0 +1,8 @@
+odoo:
+    src: https://github.com/oca/ocb.git 12.0
+    depth: 1
+
+oca/web:
+    src: https://github.com/OCA/web.git 12.0
+    modules:
+        - web_environment_ribbon
