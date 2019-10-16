@@ -14,7 +14,7 @@ services:
     volumes:
         - "/var/run/docker.sock:/var/run/docker.sock:ro"
   db:
-    image: postgres:9.6
+    image: postgres:10.10
     ports:
       - 5432
     environment:
@@ -29,9 +29,7 @@ services:
       - DB_USER=odoo
       - DB_PASS=odoo
       - DB_NAME=db
-      - RUNNING_ENV=$ENV
       - MARABUNTA_MODE=full
-      - CPU_TIME_LIMIT=150000
     labels:
       docky.access.help: http://${COMPOSE_PROJECT_NAME}.dy
       traefik.enable: true

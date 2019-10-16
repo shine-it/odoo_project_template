@@ -2,6 +2,7 @@
 .*
 !.travis
 !.gitignore
+!.env
 tags
 # compiled python files
 *.py[co]
