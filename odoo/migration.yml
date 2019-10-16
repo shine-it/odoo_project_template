@@ -11,8 +11,3 @@ migration:
       addons:
         upgrade:
           - web_environment_ribbon
-          - sale_management
-          - sale_purchase
-          - sale_mrp
-          - sale_stock
-          - sale_expense
