@@ -32,6 +32,6 @@ MAINTAINER Camptocamp
 #         && rm -rf /var/lib/apt/lists/*
 
 # COPY ./requirements.txt /odoo/
-# RUN cd /odoo && pip install -r requirements.txt
+RUN cd /odoo && pip install -r requirements.txt
 
 ENV ADDONS_PATH=/odoo/local-src,/odoo/src/addons,/odoo/links

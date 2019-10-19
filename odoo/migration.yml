@@ -5,9 +5,10 @@ migration:
     - version: setup
       operations:
         pre:
-          - "sh -c 'psql -c \"CREATE EXTENSION pg_trgm;\"'"
+          - "sh -c 'psql -c \"CREATE EXTENSION IF NOT EXISTS pg_trgm;\"'"
         post:
           - echo 'added in the setup post stage'
+          - anthem songs.install.base::main
       addons:
         upgrade:
           - web_environment_ribbon

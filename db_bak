@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOST_BACKUPS=./backup
-PROJECT_NAME=odoo_project_template
-
+PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+HOST_BACKUPS="$PROJECT_DIR/backup"
+PROJECT_NAME="$(basename $PROJECT_DIR)"
 docker run --rm --net=${PROJECT_NAME}_default -e PGPASSWORD=odoo -v $HOST_BACKUPS:/backup postgres:10.10 pg_dump -Uodoo --file /backup/db.pg --format=c db -h db

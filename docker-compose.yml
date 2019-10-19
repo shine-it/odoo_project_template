@@ -51,5 +51,3 @@ services:
       - ./data/filestore:/data/odoo/filestore
       - ./data/sessions:/data/odoo/sessions
 version: '3'
-volumes:
-  py3o_tmp: null

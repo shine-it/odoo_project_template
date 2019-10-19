@@ -8,7 +8,7 @@ tags
 *.py[co]
 # setup.py egg_info
 *.egg-info
-
+/backup
 /odoo/src
 /odoo/external-src
 /odoo/links
