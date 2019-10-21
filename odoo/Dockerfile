@@ -21,15 +21,17 @@ MAINTAINER Camptocamp
 # RUN pip install -e /odoo/src
 
 # Project's specifics packages
-# RUN set -x; \
-#         sed -i "s@http://deb.debian.org@http://mirrors.aliyun.com@g" \
-#         /etc/apt/sources.list \
-#         && rm -Rf /var/lib/apt/lists/* \
-#         && apt-get update \
-#         && apt-get install -y --no-install-recommends \
-#         python-shapely \
-#         && apt-get clean \
-#         && rm -rf /var/lib/apt/lists/*
+# Add Chinese Fonts
+RUN set -x; \
+        sed -i "s@http://deb.debian.org@http://mirrors.aliyun.com@g" \
+        /etc/apt/sources.list \
+        && rm -Rf /var/lib/apt/lists/* \
+        && apt-get update \
+        && apt-get install -y --no-install-recommends \
+        ttf-wqy-zenhei \
+        ttf-wqy-microhei \
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*
 
 COPY ./requirements.txt /odoo/
 RUN cd /odoo && pip install -r requirements.txt
